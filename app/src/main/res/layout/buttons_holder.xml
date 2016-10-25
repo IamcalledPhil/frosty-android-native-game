@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:id= "@id/buttons_holder"
+    android:gravity="center"
+    android:visibility="gone"
+    android:background="#B336A5E0"
+    >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/gameover"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="20dp"
+        android:textColor="#FFFFFF"
+        android:textSize="60dp"
+        android:gravity="center_horizontal"
+        ></TextView>
+
+    <TextView
+        android:id="@+id/game_over"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#FFFFFF"
+        android:textSize="20dp"
+        android:layout_marginBottom="20dp"
+        ></TextView>
+
+    <Button
+        android:id= "@+id/play_again"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:text="@string/play_again"
+        android:onClick="playAgain"
+        android:theme="@style/AppTheme.game_over_buttons"
+        />
+    <Button
+        android:id= "@id/back_to_main"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:text="@string/main_menu"
+        android:onClick="backToMain"
+        android:theme="@style/AppTheme.game_over_buttons"
+
+        />
+    <Button
+        android:id= "@+id/share"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:text="@string/share"
+        android:onClick="shareIt"
+        android:theme="@style/AppTheme.game_over_buttons"
+        />
+
+</LinearLayout>

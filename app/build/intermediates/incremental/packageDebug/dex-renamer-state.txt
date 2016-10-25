@@ -1,0 +1,7 @@
+#Tue Oct 25 17:37:48 BST 2016
+base.0=C\:\\Users\\Phil\\AndroidStudioProjects\\DownhillGame\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run_626e933755ea9835a204d5a40c20a7ddef23d5fd
+renamed.1=classes2.dex
+renamed.0=classes.dex
+file.1=C\:\\Users\\Phil\\AndroidStudioProjects\\DownhillGame\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run-bootstrap_ff5a41d4b8da7bb90ab1e40ab1a0a272968ba849\\classes.dex
+base.1=C\:\\Users\\Phil\\AndroidStudioProjects\\DownhillGame\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run-bootstrap_ff5a41d4b8da7bb90ab1e40ab1a0a272968ba849
+file.0=C\:\\Users\\Phil\\AndroidStudioProjects\\DownhillGame\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run_626e933755ea9835a204d5a40c20a7ddef23d5fd\\classes.dex

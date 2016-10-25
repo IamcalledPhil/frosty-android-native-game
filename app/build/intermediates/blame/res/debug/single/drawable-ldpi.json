@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "C:\\Users\\Phil\\AndroidStudioProjects\\DownhillGame\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi\\tunnel.png",
+        "source": "C:\\Users\\Phil\\AndroidStudioProjects\\DownhillGame\\app\\src\\main\\res\\drawable-ldpi\\tunnel.png"
+    },
+    {
+        "merged": "C:\\Users\\Phil\\AndroidStudioProjects\\DownhillGame\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi\\enemy.png",
+        "source": "C:\\Users\\Phil\\AndroidStudioProjects\\DownhillGame\\app\\src\\main\\res\\drawable-ldpi\\enemy.png"
+    }
+]

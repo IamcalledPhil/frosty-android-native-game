@@ -1,0 +1,26 @@
+[
+    {
+        "merged": "C:\\Users\\Phil\\AndroidStudioProjects\\DownhillGame\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\enemy.png",
+        "source": "C:\\Users\\Phil\\AndroidStudioProjects\\DownhillGame\\app\\src\\main\\res\\drawable-mdpi\\enemy.png"
+    },
+    {
+        "merged": "C:\\Users\\Phil\\AndroidStudioProjects\\DownhillGame\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_sync_black_24dp.png",
+        "source": "C:\\Users\\Phil\\AndroidStudioProjects\\DownhillGame\\app\\src\\main\\res\\drawable-mdpi\\ic_sync_black_24dp.png"
+    },
+    {
+        "merged": "C:\\Users\\Phil\\AndroidStudioProjects\\DownhillGame\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_info_black_24dp.png",
+        "source": "C:\\Users\\Phil\\AndroidStudioProjects\\DownhillGame\\app\\src\\main\\res\\drawable-mdpi\\ic_info_black_24dp.png"
+    },
+    {
+        "merged": "C:\\Users\\Phil\\AndroidStudioProjects\\DownhillGame\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\tunnel.png",
+        "source": "C:\\Users\\Phil\\AndroidStudioProjects\\DownhillGame\\app\\src\\main\\res\\drawable-mdpi\\tunnel.png"
+    },
+    {
+        "merged": "C:\\Users\\Phil\\AndroidStudioProjects\\DownhillGame\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\tree1.png",
+        "source": "C:\\Users\\Phil\\AndroidStudioProjects\\DownhillGame\\app\\src\\main\\res\\drawable-mdpi\\tree1.png"
+    },
+    {
+        "merged": "C:\\Users\\Phil\\AndroidStudioProjects\\DownhillGame\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_notifications_black_24dp.png",
+        "source": "C:\\Users\\Phil\\AndroidStudioProjects\\DownhillGame\\app\\src\\main\\res\\drawable-mdpi\\ic_notifications_black_24dp.png"
+    }
+]

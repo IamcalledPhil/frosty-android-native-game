@@ -1,0 +1,30 @@
+[
+    {
+        "merged": "C:\\Users\\Phil\\AndroidStudioProjects\\DownhillGame\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\ic_notifications_black_24dp.png",
+        "source": "C:\\Users\\Phil\\AndroidStudioProjects\\DownhillGame\\app\\src\\main\\res\\drawable-xhdpi\\ic_notifications_black_24dp.png"
+    },
+    {
+        "merged": "C:\\Users\\Phil\\AndroidStudioProjects\\DownhillGame\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\tunnel.png",
+        "source": "C:\\Users\\Phil\\AndroidStudioProjects\\DownhillGame\\app\\src\\main\\res\\drawable-xhdpi\\tunnel.png"
+    },
+    {
+        "merged": "C:\\Users\\Phil\\AndroidStudioProjects\\DownhillGame\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\tree1.png",
+        "source": "C:\\Users\\Phil\\AndroidStudioProjects\\DownhillGame\\app\\src\\main\\res\\drawable-xhdpi\\tree1.png"
+    },
+    {
+        "merged": "C:\\Users\\Phil\\AndroidStudioProjects\\DownhillGame\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\ic_sync_black_24dp.png",
+        "source": "C:\\Users\\Phil\\AndroidStudioProjects\\DownhillGame\\app\\src\\main\\res\\drawable-xhdpi\\ic_sync_black_24dp.png"
+    },
+    {
+        "merged": "C:\\Users\\Phil\\AndroidStudioProjects\\DownhillGame\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\enemy.png",
+        "source": "C:\\Users\\Phil\\AndroidStudioProjects\\DownhillGame\\app\\src\\main\\res\\drawable-xhdpi\\enemy.png"
+    },
+    {
+        "merged": "C:\\Users\\Phil\\AndroidStudioProjects\\DownhillGame\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\ic_info_black_24dp.png",
+        "source": "C:\\Users\\Phil\\AndroidStudioProjects\\DownhillGame\\app\\src\\main\\res\\drawable-xhdpi\\ic_info_black_24dp.png"
+    },
+    {
+        "merged": "C:\\Users\\Phil\\AndroidStudioProjects\\DownhillGame\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\gate.png",
+        "source": "C:\\Users\\Phil\\AndroidStudioProjects\\DownhillGame\\app\\src\\main\\res\\drawable-xhdpi\\gate.png"
+    }
+]

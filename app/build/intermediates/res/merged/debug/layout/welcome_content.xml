@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <ImageView
+        android:id="@+id/background_one"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:scaleType="centerCrop"
+        android:src="@drawable/titlebackground" />
+
+    <ImageView
+        android:id = "@+id/background_two"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:scaleType="centerCrop"
+        android:src="@drawable/titlebackground" />
+
+
+
+        <ImageView
+            android:id = "@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:layout_marginTop="60dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:src="@drawable/frosty"
+            ></ImageView>
+
+
+
+        <ImageButton
+            android:id= "@+id/play_button"
+            android:background = "@null"
+            android:src = "@drawable/play_sld"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_centerInParent="true"
+            android:scaleType="fitCenter"
+            android:onClick="playGame"
+            />
+
+
+
+        <RelativeLayout
+            android:id="@+id/linear_buttons_one"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_below="@id/play_button"
+            >
+
+            <ImageButton
+                android:id= "@+id/highscores_button"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:scaleType="fitCenter"
+                android:layout_marginTop="40dp"
+                android:layout_marginBottom="10dp"
+                android:background = "@null"
+                android:src = "@drawable/scores_sld"
+                android:onClick="viewHighscores"
+                />
+
+            <ImageButton
+                android:id= "@+id/settings_button"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:scaleType="fitCenter"
+                android:layout_marginTop="40dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="120dp"
+                android:background = "@null"
+                android:src = "@drawable/settings_sld"
+                android:onClick="viewSettings"
+                />
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/linear_buttons_two"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_alignParentBottom="true"
+            >
+
+            <Button
+                android:id= "@+id/tutorial_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:text="@string/tutorial_button"
+                android:onClick="playTutorial"
+                android:theme="@style/AppTheme.Button"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                />
+
+
+        </RelativeLayout>
+
+
+
+
+</RelativeLayout>
