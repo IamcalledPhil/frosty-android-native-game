@@ -5,7 +5,7 @@
     >
 
     <ImageView
-        android:id="@+id/background_one"
+        android:id="@+id/background_one_welcome"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_centerInParent="true"
@@ -13,7 +13,7 @@
         android:src="@drawable/titlebackground" />
 
     <ImageView
-        android:id = "@+id/background_two"
+        android:id = "@+id/background_two_welcome"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_centerInParent="true"

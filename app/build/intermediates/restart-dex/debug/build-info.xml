@@ -5,36 +5,36 @@
     density="xhdpi"
     format="8"
     plugin-version="2.2.2"
-    timestamp="109621410399523"
+    timestamp="2704601847276"
     token="-9117546384882768208"
     verifier="COLD_SWAP_REQUESTED" >
 
     <task
         name="javac"
-        duration="4049" />
+        duration="1034" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="366" />
+        duration="63" />
     <task
         name="verifier"
-        duration="10" />
+        duration="9" />
 
     <artifact
         location="C:\Users\Phil\AndroidStudioProjects\DownhillGame\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_7\classes.dex"
         type="DEX" />
 
     <build
-        timestamp="108662575739280"
+        timestamp="1070346392788"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
             location="C:\Users\Phil\AndroidStudioProjects\DownhillGame\app\build\outputs\apk\app-debug.apk"
             type="MAIN" />
     </build>
     <build
-        timestamp="109621410399523"
+        timestamp="2704601847276"
         verifier="COLD_SWAP_REQUESTED" >
         <artifact
             location="C:\Users\Phil\AndroidStudioProjects\DownhillGame\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_7\classes.dex"

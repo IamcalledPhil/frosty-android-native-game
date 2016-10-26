@@ -16,7 +16,9 @@ public class DownhillGameActivity extends AppCompatActivity {
         DownhillGameView DownhillGameView;
         FrameLayout game;// Sort of "holder" for everything we are placing
      View GameButtons;//Holder for the buttons
+    View GameTextLayout;
     TextView gameOverText;
+    TextView gameText;
     boolean beatHighScore;
     int score;
 
@@ -42,13 +44,16 @@ public class DownhillGameActivity extends AppCompatActivity {
             game = new FrameLayout(this);
             LayoutInflater layOutInflater = (LayoutInflater) getSystemService (LAYOUT_INFLATER_SERVICE);
             GameButtons = layOutInflater.inflate (R.layout.buttons_holder, null);
+            GameTextLayout = layOutInflater.inflate (R.layout.game_text, null);
 
             gameOverText = (TextView) GameButtons.findViewById(R.id.game_over);
+            gameText = (TextView) GameTextLayout.findViewById(R.id.game_text_view);
 
             DownhillGameView = new DownhillGameView(this, size.x, size.y, handler);
 
             game.addView(DownhillGameView);
             game.addView(GameButtons);
+            game.addView(GameTextLayout);
             setContentView(game);
 
 
@@ -84,6 +89,23 @@ public class DownhillGameActivity extends AppCompatActivity {
                 }else{
                     gameOverText.setText("Your score is " + score);
                 }
+            }
+        });
+    }
+
+    public void callGameText(final int levelNumber, final String TextToDisplay){
+        DownhillGameActivity.this.runOnUiThread(new Runnable() {
+            public void run() {
+                gameText.setText("Level " + levelNumber + "\n" + TextToDisplay);
+                GameTextLayout.setVisibility(View.VISIBLE);
+            }
+        });
+    }
+
+    public void turnOffGameText(){
+        DownhillGameActivity.this.runOnUiThread(new Runnable() {
+            public void run() {
+                GameTextLayout.setVisibility(View.GONE);
             }
         });
     }

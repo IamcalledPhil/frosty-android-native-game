@@ -28,8 +28,6 @@ public class WelcomeScreenActivity extends Activity  {
         tutButton = (Button)findViewById(R.id.tutorial_button);
 
 
-
-
         tutButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent intent = new Intent(v.getContext(), TutorialActivity.class);
@@ -37,8 +35,10 @@ public class WelcomeScreenActivity extends Activity  {
             }
         });
 
-        final ImageView backgroundOne = (ImageView) findViewById(R.id.background_one);
-        final ImageView backgroundTwo = (ImageView) findViewById(R.id.background_two);
+        final ImageView backgroundOne = (ImageView) findViewById(R.id.background_one_welcome);
+        final ImageView backgroundTwo = (ImageView) findViewById(R.id.background_two_welcome);
+
+        animateBackground(backgroundOne, backgroundTwo);
 
         final ValueAnimator animator = ValueAnimator.ofFloat(0.0f, -1.0f);
         animator.setRepeatCount(ValueAnimator.INFINITE);
@@ -88,7 +88,23 @@ public class WelcomeScreenActivity extends Activity  {
         startActivity(intent);
     }
 
-
+    public void animateBackground(final ImageView back1, final ImageView back2){
+        final ValueAnimator animator = ValueAnimator.ofFloat(0.0f, -1.0f);
+        animator.setRepeatCount(ValueAnimator.INFINITE);
+        animator.setInterpolator(new LinearInterpolator());
+        animator.setDuration(10000L);
+        animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            @Override
+            public void onAnimationUpdate(ValueAnimator animation) {
+                final float progress = (float) animation.getAnimatedValue();
+                final float height = back1.getHeight();
+                final float translationY = height * progress;
+                back1.setTranslationY(translationY);
+                back2.setTranslationY(translationY + height);
+            }
+        });
+        animator.start();
+    }
 
 
 }

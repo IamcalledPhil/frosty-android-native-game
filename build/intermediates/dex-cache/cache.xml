@@ -25,7 +25,7 @@
         jumboMode="true"
         optimize="true"
         revision="23.0.1"
-        sha1="79c9886ca3f737a57c67bd66007b9acc824901eb">
+        sha1="48f2716d32c9af564e330dd95d8d6d1178e12e92">
         <dex dex="C:\Users\Phil\AndroidStudioProjects\DownhillGame\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_626e933755ea9835a204d5a40c20a7ddef23d5fd\classes.dex" />
     </item>
     <item
@@ -52,7 +52,7 @@
         jumboMode="true"
         optimize="true"
         revision="23.0.1"
-        sha1="80bb83028a41f595455e8b2d58bc741905fac43e">
+        sha1="11d6301e79faf7b759ada9884689a17f9076c514">
         <dex dex="C:\Users\Phil\AndroidStudioProjects\DownhillGame\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_ff5a41d4b8da7bb90ab1e40ab1a0a272968ba849\classes.dex" />
     </item>
     <item

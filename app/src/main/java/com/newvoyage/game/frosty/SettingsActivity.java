@@ -1,11 +1,14 @@
 package com.newvoyage.game.frosty;
 
+import android.animation.ValueAnimator;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.LinearInterpolator;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
@@ -73,6 +76,12 @@ public class SettingsActivity extends AppCompatActivity {
             }
         });
 
+        final ImageView backgroundOne = (ImageView) findViewById(R.id.background_one_settings);
+        final ImageView backgroundTwo = (ImageView) findViewById(R.id.background_two_settings);
+
+        animateBackground(backgroundOne, backgroundTwo);
+
+
     }
 
     public void onBackPressed() {
@@ -105,6 +114,24 @@ public class SettingsActivity extends AppCompatActivity {
         }else if (difficulty==2){
             diffButton.setText("Difficulty: Hard");
         }
+    }
+
+    public void animateBackground(final ImageView back1, final ImageView back2){
+        final ValueAnimator animator = ValueAnimator.ofFloat(0.0f, -1.0f);
+        animator.setRepeatCount(ValueAnimator.INFINITE);
+        animator.setInterpolator(new LinearInterpolator());
+        animator.setDuration(10000L);
+        animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            @Override
+            public void onAnimationUpdate(ValueAnimator animation) {
+                final float progress = (float) animation.getAnimatedValue();
+                final float height = back1.getHeight();
+                final float translationY = height * progress;
+                back1.setTranslationY(translationY);
+                back2.setTranslationY(translationY + height);
+            }
+        });
+        animator.start();
     }
 
 }

@@ -1252,28 +1252,9 @@ public class DownhillGameView extends SurfaceView implements Runnable, SensorEve
             //draw next level instructions
             if (levelNo!=1) {
                 if (screenLengthsTravelled == 0) {
-                    //only draw while the animation is active
-                    if (textAnimation1.getStatus()==false){ //if it's not started, start the animation
-                        textAnimation1.startAnimation();
-                    }
-                    paint.setTextSize(textAnimation1.getSize());
-                    canvas.drawText("Level cleared!", textAnimation1.getX(), textAnimation1.getY(), paint);
-                    turnOnAnimation1 = true;
-                }
-                if (screenLengthsTravelled == 1) {
-                    if (turnOnAnimation1) {  //if it's the first time here, turn on the animation
-                        textAnimation1.setInactive();
-                        textAnimation1.startAnimation();
-                    }
-                    turnOnAnimation1 = false;
-                    paint.setTextSize(textAnimation1.getSize());
-                    canvas.drawText("Level " + levelNo + ":",
-                            textAnimation1.getX(), textAnimation1.getY(), paint);
-                    canvas.drawText(levelDescription,
-                            textAnimation1.getX(), textAnimation1.getY()+(screenY/8), paint);
-                }
-                if (screenLengthsTravelled == 2){
-                    textAnimation1.setInactive();
+                    ((DownhillGameActivity) getContext()).callGameText(levelNo,levelDescription);
+                }else if (screenLengthsTravelled == 2){
+                    ((DownhillGameActivity) getContext()).turnOffGameText();
                 }
             }
             //draw the text for bonus points for speed
