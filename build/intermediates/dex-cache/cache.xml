@@ -3,21 +3,30 @@
 
     <item
         is-multidex="true"
-        jar="C:\Users\Phil\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\23.2.0\support-annotations-23.2.0.jar"
+        jar="C:\Users\Phil\AndroidStudioProjects\DownhillGame\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\24.2.0\jars\libs\internal_impl-24.2.0.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.1"
-        sha1="c5bf571bb10462bd90e5419ade67793f71acbc87">
-        <dex dex="C:\Users\Phil\AndroidStudioProjects\DownhillGame\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-23.2.0_84e1155de2ff5543836d85778d17b0486405c645\classes.dex" />
+        sha1="045be695d968dd707691cc55d23746dbf8cf569a">
+        <dex dex="C:\Users\Phil\AndroidStudioProjects\DownhillGame\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.0_e896b0d1171797bfce07abe5db20553996d7dacd\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\Phil\AndroidStudioProjects\DownhillGame\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.2.0\jars\libs\internal_impl-23.2.0.jar"
+        jar="C:\Users\Phil\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\24.2.0\support-annotations-24.2.0.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.1"
-        sha1="6e239441500605809818997dd63b62a947195f8c">
-        <dex dex="C:\Users\Phil\AndroidStudioProjects\DownhillGame\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-23.2.0_a4069eedbc277e9defe9b9c5143e8c726ae09fe6\classes.dex" />
+        sha1="6be858a75633b1f0a2d24cad740db57775cb6871">
+        <dex dex="C:\Users\Phil\AndroidStudioProjects\DownhillGame\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-24.2.0_7f384196beb3b3787e19bb6e45826d9725ec7b75\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Phil\AndroidStudioProjects\DownhillGame\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="fcc945a86ebcbf527429acb8216ec7dae2c06417">
+        <dex dex="C:\Users\Phil\AndroidStudioProjects\DownhillGame\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-utils-24.2.0_043da73d096ad4c86081f39ce768629a42092511\classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -25,7 +34,7 @@
         jumboMode="true"
         optimize="true"
         revision="23.0.1"
-        sha1="48f2716d32c9af564e330dd95d8d6d1178e12e92">
+        sha1="78df9772521a2c9b7855517633beb6d9b63f48eb">
         <dex dex="C:\Users\Phil\AndroidStudioProjects\DownhillGame\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_626e933755ea9835a204d5a40c20a7ddef23d5fd\classes.dex" />
     </item>
     <item
@@ -39,48 +48,93 @@
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\Phil\AndroidStudioProjects\DownhillGame\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\23.2.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.1"
-        sha1="292a9fa091757208efa65e77eef63088247e51f3">
-        <dex dex="C:\Users\Phil\AndroidStudioProjects\DownhillGame\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-vector-drawable-23.2.0_1117fe20159cb98a86dd57c9d55e53c644b731f9\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="C:\Users\Phil\AndroidStudioProjects\DownhillGame\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.1"
-        sha1="11d6301e79faf7b759ada9884689a17f9076c514">
+        sha1="5d421569b3ad2b946929de7c7719ad7730baf433">
         <dex dex="C:\Users\Phil\AndroidStudioProjects\DownhillGame\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_ff5a41d4b8da7bb90ab1e40ab1a0a272968ba849\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\Phil\AndroidStudioProjects\DownhillGame\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.2.0\jars\classes.jar"
+        jar="C:\Users\Phil\AndroidStudioProjects\DownhillGame\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\24.2.0\jars\libs\internal_impl-24.2.0.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.1"
-        sha1="e5f32fa48a3eb2de0c987025c11b6e3864b634d9">
-        <dex dex="C:\Users\Phil\AndroidStudioProjects\DownhillGame\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-23.2.0_4f74f0dd2464bb3231dd85e7e4db2d08ac2df00a\classes.dex" />
+        sha1="6e02e34594ebe9c0501ffda8dd48497f81b82977">
+        <dex dex="C:\Users\Phil\AndroidStudioProjects\DownhillGame\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.0_2cee15f362864192362e71b4af54ffb5ba2a7d5b\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\Phil\AndroidStudioProjects\DownhillGame\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\23.2.0\jars\classes.jar"
+        jar="C:\Users\Phil\AndroidStudioProjects\DownhillGame\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.0\jars\libs\internal_impl-24.2.0.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.1"
-        sha1="8c108c22c99e794eff255bb34d2a461200c4cbb0">
-        <dex dex="C:\Users\Phil\AndroidStudioProjects\DownhillGame\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-animated-vector-drawable-23.2.0_ff48f7db508323e057cc0a908a3cc15a79364e8d\classes.dex" />
+        sha1="771b3cc0e597b54da25f8086ba73180c59c6bc71">
+        <dex dex="C:\Users\Phil\AndroidStudioProjects\DownhillGame\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.0_dd517ceb18d0e313c0f60d2eefe6c52040e9358e\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\Phil\AndroidStudioProjects\DownhillGame\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.2.0\jars\classes.jar"
+        jar="C:\Users\Phil\AndroidStudioProjects\DownhillGame\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\24.2.0\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.1"
-        sha1="6e3578f92f7462d1a935a1d36173e3bdd1234976">
-        <dex dex="C:\Users\Phil\AndroidStudioProjects\DownhillGame\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-23.2.0_8691def10be0ad19432981ba50b3a38d4fd044e6\classes.dex" />
+        sha1="6eb9107eb34d2fe2b020662b7fbbec991dcba846">
+        <dex dex="C:\Users\Phil\AndroidStudioProjects\DownhillGame\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-media-compat-24.2.0_60abaf08d1167f70af44754c14cc6dc95eb77174\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Phil\AndroidStudioProjects\DownhillGame\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\24.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="beac40bcc8a320a896dd15f5109cfcaea5e1e0e3">
+        <dex dex="C:\Users\Phil\AndroidStudioProjects\DownhillGame\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-vector-drawable-24.2.0_6b013c276675f780d0d03cf12a3759e4f0defbaa\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Phil\AndroidStudioProjects\DownhillGame\app\build\intermediates\exploded-aar\com.android.support\support-fragment\24.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="d8bd2268fdcbfd52c76ade65d9900cd8def93a44">
+        <dex dex="C:\Users\Phil\AndroidStudioProjects\DownhillGame\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-fragment-24.2.0_8222ab11ccd0b2361773ac36d20b2c1a739d58e8\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Phil\AndroidStudioProjects\DownhillGame\app\build\intermediates\exploded-aar\com.github.medyo\android-about-page\1.1.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="1d8a3cef611578892f5e00a85dc8520062fbe005">
+        <dex dex="C:\Users\Phil\AndroidStudioProjects\DownhillGame\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.github.medyo-android-about-page-1.1.1_9af19fc4913e6954ca62f610fa6601205ec41c1f\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Phil\AndroidStudioProjects\DownhillGame\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="45f5eda279825ff470e3f51019d374d1ef61e000">
+        <dex dex="C:\Users\Phil\AndroidStudioProjects\DownhillGame\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-24.2.0_2622236747f1130d9bdf3b8c07095a1f6eea5957\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Phil\AndroidStudioProjects\DownhillGame\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="f9b41622897665678d31d78e57a361cb0cebcb0d">
+        <dex dex="C:\Users\Phil\AndroidStudioProjects\DownhillGame\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-compat-24.2.0_bde94e68789aa458380272b0fb4b9cb723259758\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Phil\AndroidStudioProjects\DownhillGame\app\build\intermediates\exploded-aar\com.android.support\support-fragment\24.2.0\jars\libs\internal_impl-24.2.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="032a4b53def5e2ceedfc2e793b126c0163cfa1dd">
+        <dex dex="C:\Users\Phil\AndroidStudioProjects\DownhillGame\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.0_9036d58917db905d51f8e610ff4568e8507d268a\classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -90,6 +144,42 @@
         revision="23.0.1"
         sha1="d4c936aa8c7d2522c82e3f1829c791d9e367f009">
         <dex dex="C:\Users\Phil\AndroidStudioProjects\DownhillGame\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-recyclerview-v7-23.2.0_13600d75c63255eb34418ca33d59647f24db5de7\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Phil\AndroidStudioProjects\DownhillGame\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.0\jars\libs\internal_impl-24.2.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="60d7b23621d31e6f42f4f76f16af467e57a20cda">
+        <dex dex="C:\Users\Phil\AndroidStudioProjects\DownhillGame\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.0_d261f59590308d5c237c905cbfcb1b0f0bdda5c8\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Phil\AndroidStudioProjects\DownhillGame\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\24.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="f3ee23ef25c9a8fe3d40246d0b7097267963a612">
+        <dex dex="C:\Users\Phil\AndroidStudioProjects\DownhillGame\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-animated-vector-drawable-24.2.0_f8819ecc823fd8684e0f2e71e9685198229b19a5\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Phil\AndroidStudioProjects\DownhillGame\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\24.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="c84e216d9bf618464d6b9564d71d9a656433e7c4">
+        <dex dex="C:\Users\Phil\AndroidStudioProjects\DownhillGame\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-ui-24.2.0_e98ad71a215f7b9f7b7265a3726e509437327163\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Phil\AndroidStudioProjects\DownhillGame\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\24.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="c3c638be6e650b165ab9ae144857b64e82787fad">
+        <dex dex="C:\Users\Phil\AndroidStudioProjects\DownhillGame\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-24.2.0_7946b9ac1e18b41e546dd008180068a85acd9fd4\classes.dex" />
     </item>
 
 </items>

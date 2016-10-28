@@ -47,15 +47,10 @@ public class TutorialGameView extends SurfaceView implements Runnable, SensorEve
     // Game is paused at the start
     private boolean paused = true;
 
+    private boolean turnedOffGameText;
+
     //vairable that stops players playing exiting the popup dialouge at game over and unpausing the game
     private boolean ableToUnpause;
-
-    //trail that the ship leaves behind, and floats that contain the previous coordinates to draw to
-    private Path shipPath1;
-    private Path shipPath2;
-    private float previousPathY;
-    private int pathSwitchCounter;
-    private Matrix translateMatrix;
 
     // A Canvas and a Paint object
     private Canvas canvas;
@@ -115,6 +110,10 @@ public class TutorialGameView extends SurfaceView implements Runnable, SensorEve
     private int pauseButtonHeight;
     private int pauseButtonWidth;
 
+    private boolean pausedLastUpdate = false;
+    private boolean cueNextText;
+    private boolean firstUpdateCycle;
+
     // The score, and how often it is updated
     int score = 0;
     int scoreInterval=100;
@@ -122,9 +121,7 @@ public class TutorialGameView extends SurfaceView implements Runnable, SensorEve
     boolean speedBonus;
     boolean playSpeedAnimation;
     boolean turnOnAnimation1;
-    private String levelDescription1;
-    private String levelDescription2;
-    private String levelDescription3;
+    private String levelDescription;
     private long startSpeedTime;
     private boolean justStartedSpeed;
     private boolean endGame;
@@ -176,6 +173,8 @@ public class TutorialGameView extends SurfaceView implements Runnable, SensorEve
     //to tell various methods if is their first time running this game
     private boolean justStarted;
 
+    private boolean canStartNextAnimation;
+
     //variable for the values from tilting the device
     float tiltx;
 
@@ -192,7 +191,6 @@ public class TutorialGameView extends SurfaceView implements Runnable, SensorEve
     private Text textAnimation1;
     private Text textAnimation2;
     private Text textAnimation3;
-    private Text textAnimation4;
 
     //the path tiles
     private Tile [][] tileMap;
@@ -344,17 +342,12 @@ public class TutorialGameView extends SurfaceView implements Runnable, SensorEve
         score=0;
         speedBonus = false;
         playSpeedAnimation = true;
-        shipPath1 = new Path();
-        shipPath2 = new Path();
         densityUnit=screenY/100;
         textAnimation1 = new Text(screenX, screenY, 1);
         textAnimation2 = new Text(screenX, screenY, 2);
         textAnimation3 = new Text(screenX, screenY,4);
-        textAnimation4 = new Text(screenX, screenY, 3);
         turnOnAnimation1=true;
-        levelDescription1=new String();
-        levelDescription2=new String();
-        levelDescription3=new String();
+        levelDescription=new String();
         ableToUnpause=true;
         display_dialog_on_touch=false;
         flashingSolid = false;
@@ -362,7 +355,9 @@ public class TutorialGameView extends SurfaceView implements Runnable, SensorEve
         flashingStartTime=0;
         makeGate=false;
         tunnelWidth=(screenX/2)+(screenX/6);
-
+        canStartNextAnimation = true;
+        cueNextText = true;
+        turnedOffGameText=true;
 
         // Here we will initialize all the game objects
 
@@ -535,50 +530,38 @@ public class TutorialGameView extends SurfaceView implements Runnable, SensorEve
     }
 
     private void setLevel(){
+        screenLengthsTravelled=0;
+
         if (levelNo==1){
             ship.setGradient(gradient);
-            levelDescription1 = "Tilt your device to the";
-            levelDescription2 = "left to turn left!";
-            levelDescription3 = "";
-            //set the text animation inactive, so it knows to start up again when the text changes
-            textAnimation4.setInactive();
+            levelDescription = "Tilt your device to the left to turn left!";
         }else if (levelNo==2){
-              levelDescription1 = "Great! Now tilt your device to";
-            levelDescription2 = "the right to turn right!";
-            levelDescription3 = "";
-            textAnimation4.setInactive();
+              levelDescription = "Great! Now tilt your device to the right to turn right!";
         } else if (levelNo==3){
-            levelDescription1 = "Notice how turning slows";
-            levelDescription2 = "you down? Try to go as";
-            levelDescription3 = "slow as you can by turning.";
-            textAnimation4.setInactive();
+            levelDescription = "Notice how turning slows you down? Try to go as slow as you can by turning";
         }else if (levelNo==4){
-            levelDescription1 = "Good job! Now go as";
-            levelDescription2 = "fast as you can by travelling";
-            levelDescription3 = "in a straight line!";
-            textAnimation4.setInactive();
+            levelDescription = "Good job! Now go as fast as you can by travelling in a straight line!";
         }else if (levelNo==5){
-            levelDescription1 = "Now let's see if you can steer";
-            levelDescription2 = "around these trees. Go through the";
-            levelDescription3 = "flags to gain temporary invincibility!";
-            textAnimation4.setInactive();
+            levelDescription = "Now let's see if you can steer around these trees. Go through the flags to gain temporary invincibility!";
         }else if (levelNo==6){
-            levelDescription1 = "Cool. Time for a tunnel!";
-            levelDescription2 = "Remember, the faster you go,";
-            levelDescription3 = "the more points you get.";
-            textAnimation4.setInactive();
+            levelDescription = "Cool. Time for a tunnel! Remember, the faster you go, the more points you get.";
         }else if (levelNo==7){
             startEnemyLevel = true;
-            levelDescription1 = "Touch the screen to";
-            levelDescription2 = "shoot the spaceships!";
-            levelDescription3 = "";
-            textAnimation4.setInactive();
+            levelDescription = "Touch the screen to shoot the spaceships!";
         }else if (levelNo==8){
             makeEnemies = false;
             lostGame();
         }
-
-
+        if (!beginGame) {
+            if (canStartNextAnimation) {
+                ((TutorialActivity) getContext()).callGameText(beginGame, levelDescription);
+                turnedOffGameText=false;
+            } else {
+                ((TutorialActivity) getContext()).turnOffGameText();
+                cueNextText = true;
+                turnedOffGameText=true;
+            }
+        }
     }
 
 
@@ -615,19 +598,21 @@ public class TutorialGameView extends SurfaceView implements Runnable, SensorEve
         }
 
         if (levelNo==1){
+            updateDistanceTravelled();
             if (ship.getCentre().x<screenX/6){
                 levelNo++;
                 setLevel();
             }
-            screenLengthsTravelled=1;
           //  Log.d("level", "levelNo" + levelNo);
         } else if (levelNo==2){
+            updateDistanceTravelled();
             if (ship.getCentre().x>(screenX-screenX/6)){
                 levelNo++;
                 setLevel();
             }
           //  Log.d("level", "levelNo" + levelNo);
         }else if (levelNo==3){
+            updateDistanceTravelled();
             //if the player goes below a certain speed for a satisfactory amount of time, they have
             //passed this stage of the tutorial
             long timeSlowHappening = 0;
@@ -648,6 +633,7 @@ public class TutorialGameView extends SurfaceView implements Runnable, SensorEve
             }
            // Log.d("level", "levelNo" + levelNo);
         }else if (levelNo==4){
+            updateDistanceTravelled();
             //if the player goes above a certain speed for a satisfactory amount of time, they have
             //passed this stage of the tutorial
             long timeFastHappening = 0;
@@ -683,7 +669,6 @@ public class TutorialGameView extends SurfaceView implements Runnable, SensorEve
                 if (screenLengthsTravelled>6){
                     levelNo++;
                     setLevel();
-                    screenLengthsTravelled = 0;
                 }
             }
 
@@ -1045,9 +1030,6 @@ public class TutorialGameView extends SurfaceView implements Runnable, SensorEve
         if (textAnimation3.getStatus()){
             textAnimation3.update(fps);
         }
-        if (textAnimation4.getStatus()){
-            textAnimation4.update(fps);
-        }
 
         if(!explosionAnimation1.getStopAnimation()) {
             explosionAnimation1.update();
@@ -1095,6 +1077,14 @@ public class TutorialGameView extends SurfaceView implements Runnable, SensorEve
             }
         }
         return missedRowsOrColumns;
+    }
+
+   private void updateDistanceTravelled(){
+        distanceTravelled = distanceTravelled + (densityUnit * (speed / 20)) / fps;
+        if (screenY - distanceTravelled < 0) {
+            distanceTravelled = 0;
+            screenLengthsTravelled++;
+        }
     }
 
     private void draw(){
@@ -1223,37 +1213,17 @@ public class TutorialGameView extends SurfaceView implements Runnable, SensorEve
             //display instructions for touching to play game
             paint.setColor(Color.BLACK);
             if (beginGame == true && paused == true){
-                canvas.drawText("Press anywhere to start...", (screenX/3),(screenY/2), paint);
-
+                ((TutorialActivity) getContext()).callGameText(beginGame,"Press anywhere on the screen to start");
+                turnedOffGameText=false;
             }
 
-            //draw next level instructions
+          //draw next level instructions
             if (paused==false) {
-                if (screenLengthsTravelled <=2 &&levelNo!=5) {
-
-                    if (textAnimation4.getStatus()==false){
-                        textAnimation4.startAnimation();
-                    }
-
-                    paint.setTextSize(textAnimation4.getSize());
-                    canvas.drawText(levelDescription1,
-                            textAnimation4.getX(), screenY / 2, paint);
-                    canvas.drawText(levelDescription2,
-                            textAnimation4.getX(), (screenY / 2)+(screenX/19), paint);
-                    canvas.drawText(levelDescription3,
-                            textAnimation4.getX(), (screenY / 2)+(2*(screenX/19)), paint);
-                }else if (screenLengthsTravelled<=3&&levelNo==5){
-                    if (textAnimation4.getStatus()==false){
-                        textAnimation4.startAnimation();
-                    }
-
-                    paint.setTextSize(textAnimation4.getSize());
-                    canvas.drawText(levelDescription1,
-                            textAnimation4.getX(), screenY / 2, paint);
-                    canvas.drawText(levelDescription2,
-                            textAnimation4.getX(), (screenY / 2)+(screenX/19), paint);
-                    canvas.drawText(levelDescription3,
-                            textAnimation4.getX(), (screenY / 2)+(2*(screenX/19)), paint);
+                if (cueNextText  && canStartNextAnimation) {
+                    ((TutorialActivity) getContext()).callGameText(beginGame, levelDescription);
+                    turnedOffGameText = false;
+                    canStartNextAnimation = false;
+                    cueNextText=false;
                 }
             }
             //draw the text for bonus points for speed
@@ -1272,8 +1242,12 @@ public class TutorialGameView extends SurfaceView implements Runnable, SensorEve
             paint.setAlpha(255);
             paint.setTextSize(screenY / 30);
 
-            if (!beginGame&&paused&&ableToUnpause){
-                canvas.drawText("Paused, touch to resume",screenX/8,screenY/2,paint);
+           if (!beginGame&&paused&&ableToUnpause){
+               ((TutorialActivity) getContext()).setGameTextFromGameView("Game paused, touch to continue.");
+                pausedLastUpdate=true;
+            } else if (pausedLastUpdate && !beginGame && !paused){
+               ((TutorialActivity) getContext()).setGameTextFromGameView(levelDescription);
+                pausedLastUpdate=false;
             }
 
             // Draw everything to the screen
@@ -1294,6 +1268,9 @@ public class TutorialGameView extends SurfaceView implements Runnable, SensorEve
     protected void lostGame() {
         paused = true;
         ableToUnpause=false;
+        //if the next level text is displaying....
+        ((TutorialActivity) getContext()).turnOffGameText();
+        turnedOffGameText=true;
         //call the method in the main activity to display the end of game screen
         if (levelNo!=8) {
             ((TutorialActivity) getContext()).callGameOverScreen();
@@ -1304,7 +1281,12 @@ public class TutorialGameView extends SurfaceView implements Runnable, SensorEve
             ((TutorialActivity) getContext()).callFinishedTutorialScreen();
         }
 
+    }
 
+    public void setCanStartNextAnimation(boolean animationFinished){
+        if (animationFinished){
+            canStartNextAnimation=true;
+        }
     }
 
 

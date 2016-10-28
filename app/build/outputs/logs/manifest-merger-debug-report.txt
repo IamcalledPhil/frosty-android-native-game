@@ -22,10 +22,15 @@ ADDED from C:\Users\Phil\AndroidStudioProjects\DownhillGame\app\src\main\Android
 application
 ADDED from C:\Users\Phil\AndroidStudioProjects\DownhillGame\app\src\main\AndroidManifest.xml:8:5-32:19
 MERGED from [com.android.support:design:23.2.0] C:\Users\Phil\AndroidStudioProjects\DownhillGame\app\build\intermediates\exploded-aar\com.android.support\design\23.2.0\AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:support-v4:23.2.0] C:\Users\Phil\AndroidStudioProjects\DownhillGame\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.2.0\AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:appcompat-v7:23.2.0] C:\Users\Phil\AndroidStudioProjects\DownhillGame\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.2.0\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:animated-vector-drawable:23.2.0] C:\Users\Phil\AndroidStudioProjects\DownhillGame\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\23.2.0\AndroidManifest.xml:7:5-20
-MERGED from [com.android.support:support-vector-drawable:23.2.0] C:\Users\Phil\AndroidStudioProjects\DownhillGame\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\23.2.0\AndroidManifest.xml:7:5-20
+MERGED from [com.android.support:support-v4:24.2.0] C:\Users\Phil\AndroidStudioProjects\DownhillGame\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.2.0\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-compat:24.2.0] C:\Users\Phil\AndroidStudioProjects\DownhillGame\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.0\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-core-utils:24.2.0] C:\Users\Phil\AndroidStudioProjects\DownhillGame\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.0\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-media-compat:24.2.0] C:\Users\Phil\AndroidStudioProjects\DownhillGame\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\24.2.0\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-core-ui:24.2.0] C:\Users\Phil\AndroidStudioProjects\DownhillGame\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\24.2.0\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-fragment:24.2.0] C:\Users\Phil\AndroidStudioProjects\DownhillGame\app\build\intermediates\exploded-aar\com.android.support\support-fragment\24.2.0\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:appcompat-v7:24.2.0] C:\Users\Phil\AndroidStudioProjects\DownhillGame\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\24.2.0\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-vector-drawable:24.2.0] C:\Users\Phil\AndroidStudioProjects\DownhillGame\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\24.2.0\AndroidManifest.xml:23:5-20
+MERGED from [com.android.support:animated-vector-drawable:24.2.0] C:\Users\Phil\AndroidStudioProjects\DownhillGame\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\24.2.0\AndroidManifest.xml:22:5-20
 	android:label
 		ADDED from C:\Users\Phil\AndroidStudioProjects\DownhillGame\app\src\main\AndroidManifest.xml:11:9-41
 	android:supportsRtl
@@ -76,12 +81,18 @@ uses-sdk
 INJECTED from C:\Users\Phil\AndroidStudioProjects\DownhillGame\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 MERGED from [com.android.support:design:23.2.0] C:\Users\Phil\AndroidStudioProjects\DownhillGame\app\build\intermediates\exploded-aar\com.android.support\design\23.2.0\AndroidManifest.xml:20:5-43
 MERGED from [com.android.support:recyclerview-v7:23.2.0] C:\Users\Phil\AndroidStudioProjects\DownhillGame\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\23.2.0\AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:support-v4:23.2.0] C:\Users\Phil\AndroidStudioProjects\DownhillGame\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.2.0\AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:appcompat-v7:23.2.0] C:\Users\Phil\AndroidStudioProjects\DownhillGame\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.2.0\AndroidManifest.xml:21:5-23:78
-MERGED from [com.android.support:animated-vector-drawable:23.2.0] C:\Users\Phil\AndroidStudioProjects\DownhillGame\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\23.2.0\AndroidManifest.xml:5:5-44
-MERGED from [com.android.support:support-vector-drawable:23.2.0] C:\Users\Phil\AndroidStudioProjects\DownhillGame\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\23.2.0\AndroidManifest.xml:5:5-43
+MERGED from [com.android.support:support-v4:24.2.0] C:\Users\Phil\AndroidStudioProjects\DownhillGame\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.2.0\AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-compat:24.2.0] C:\Users\Phil\AndroidStudioProjects\DownhillGame\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.0\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-core-utils:24.2.0] C:\Users\Phil\AndroidStudioProjects\DownhillGame\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.0\AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:support-media-compat:24.2.0] C:\Users\Phil\AndroidStudioProjects\DownhillGame\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\24.2.0\AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-core-ui:24.2.0] C:\Users\Phil\AndroidStudioProjects\DownhillGame\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\24.2.0\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-fragment:24.2.0] C:\Users\Phil\AndroidStudioProjects\DownhillGame\app\build\intermediates\exploded-aar\com.android.support\support-fragment\24.2.0\AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:appcompat-v7:24.2.0] C:\Users\Phil\AndroidStudioProjects\DownhillGame\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\24.2.0\AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:support-vector-drawable:24.2.0] C:\Users\Phil\AndroidStudioProjects\DownhillGame\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\24.2.0\AndroidManifest.xml:21:5-43
+MERGED from [com.android.support:animated-vector-drawable:24.2.0] C:\Users\Phil\AndroidStudioProjects\DownhillGame\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\24.2.0\AndroidManifest.xml:20:5-44
+MERGED from [com.github.medyo:android-about-page:1.1.1] C:\Users\Phil\AndroidStudioProjects\DownhillGame\app\build\intermediates\exploded-aar\com.github.medyo\android-about-page\1.1.1\AndroidManifest.xml:8:5-10:41
 	tools:overrideLibrary
-		ADDED from [com.android.support:appcompat-v7:23.2.0] C:\Users\Phil\AndroidStudioProjects\DownhillGame\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.2.0\AndroidManifest.xml:23:9-75
+		ADDED from [com.android.support:support-v4:24.2.0] C:\Users\Phil\AndroidStudioProjects\DownhillGame\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.2.0\AndroidManifest.xml:23:9-51
 	android:targetSdkVersion
 		INJECTED from C:\Users\Phil\AndroidStudioProjects\DownhillGame\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\Phil\AndroidStudioProjects\DownhillGame\app\src\main\AndroidManifest.xml

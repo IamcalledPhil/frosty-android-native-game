@@ -1,13 +1,19 @@
 package com.newvoyage.game.frosty;
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 import android.content.Intent;
+import android.graphics.Color;
 import android.graphics.Point;
+import android.os.Build;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewAnimationUtils;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 
@@ -97,7 +103,24 @@ public class DownhillGameActivity extends AppCompatActivity {
         DownhillGameActivity.this.runOnUiThread(new Runnable() {
             public void run() {
                 gameText.setText("Level " + levelNumber + "\n" + TextToDisplay);
-                GameTextLayout.setVisibility(View.VISIBLE);
+
+                // get the center/final radius for the clipping circle
+                int cx = gameText.getWidth() / 2;
+                int cy = gameText.getHeight() / 2;
+                float finalRadius = (float) Math.hypot(cx, cy);
+
+                //runs an animator if the API is high enough and is not the first level, where it's paused
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                    if (levelNumber!=1){
+                        Animator anim = ViewAnimationUtils.createCircularReveal(gameText, cx, cy, 0, finalRadius);
+                        GameTextLayout.setVisibility(View.VISIBLE);
+                        anim.start();
+                    }else {GameTextLayout.setVisibility(View.VISIBLE);}
+                } else{
+                    GameTextLayout.setVisibility(View.VISIBLE);
+                }
+
+
             }
         });
     }
@@ -105,7 +128,25 @@ public class DownhillGameActivity extends AppCompatActivity {
     public void turnOffGameText(){
         DownhillGameActivity.this.runOnUiThread(new Runnable() {
             public void run() {
-                GameTextLayout.setVisibility(View.GONE);
+                // get the center/initial radius for the clipping circle
+                int cx = gameText.getWidth() / 2;
+                int cy = gameText.getHeight() / 2;
+                float initialRadius = (float) Math.hypot(cx, cy);
+                //runs an animator if the API is high enough and is not the first level, where it's paused
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                    Animator anim = ViewAnimationUtils.createCircularReveal(gameText, cx, cy, initialRadius, 0);
+                    // make the view invisible when the animation is done
+                    anim.addListener(new AnimatorListenerAdapter() {
+                        @Override
+                        public void onAnimationEnd(Animator animation) {
+                            super.onAnimationEnd(animation);
+                            GameTextLayout.setVisibility(View.GONE);
+                        }
+                    });
+                    anim.start();
+                } else{
+                    GameTextLayout.setVisibility(View.GONE);
+                }
             }
         });
     }

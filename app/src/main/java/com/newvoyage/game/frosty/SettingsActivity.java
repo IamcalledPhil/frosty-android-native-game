@@ -5,12 +5,15 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.animation.LinearInterpolator;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.TextView;
+
+import mehdi.sakout.aboutpage.AboutPage;
 
 public class SettingsActivity extends AppCompatActivity {
 
@@ -104,6 +107,21 @@ public class SettingsActivity extends AppCompatActivity {
         }
         setDiffButton();
 
+    }
+
+    public void goToAboutPage(View view) {
+        View aboutPage = new AboutPage(this)
+                .isRTL(false)
+                .setImage(R.drawable.frosty)
+                .setDescription("Frosty was developed by me, Phil, an app developer from the UK. If you like this app, please rate it five stars on Google Play! " +
+                        "Or don't, you have your own free will and doing something just because an Android game tells you to probably isn't a great way to live your life. " +" \n\n Oh, and also all rights reserved, don't pirate this app, " +
+                        "blah blah blah, legal stuff, whatever it's a free game, no-one's going to pirate it (he says before the pirated version becomes the top-downloaded app on Google Play).")
+                .addGroup("Connect with us")
+                .addEmail("newvoyagegames@gmail.com")
+                .addTwitter("FrostyApp")
+                .addPlayStore("com.newvoyage.game.frosty")
+                .create();
+        setContentView(aboutPage);
     }
 
     public void setDiffButton(){

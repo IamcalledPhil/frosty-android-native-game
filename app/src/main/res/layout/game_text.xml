@@ -12,13 +12,15 @@
         android:id="@+id/game_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="game text"
+        android:text=""
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:layout_marginBottom="20dp"
-        android:textColor="#B336A5E0"
+        android:padding="10dp"
+        android:textColor="#FFFFFF"
         android:textSize="60dp"
         android:gravity="center_horizontal"
+        android:background="@drawable/game_text_style"
         ></TextView>
 
 

@@ -49,6 +49,8 @@ public class DownhillGameView extends SurfaceView implements Runnable, SensorEve
 
     // Game is paused at the start
     private boolean paused = true;
+    private boolean pausedLastUpdate = false;
+    private boolean turnedOffGameText = true;
 
     //vairable that stops players playing exiting the popup dialouge at game over and unpausing the game
     private boolean ableToUnpause;
@@ -57,12 +59,6 @@ public class DownhillGameView extends SurfaceView implements Runnable, SensorEve
     private int difficulty;
     private String difficultyString;
 
-    //trail that the ship leaves behind, and floats that contain the previous coordinates to draw to
-    private Path shipPath1;
-    private Path shipPath2;
-    private float previousPathY;
-    private int pathSwitchCounter;
-    private Matrix translateMatrix;
 
     // A Canvas and a Paint object
     private Canvas canvas;
@@ -378,8 +374,6 @@ public class DownhillGameView extends SurfaceView implements Runnable, SensorEve
         speedBonus = false;
         playSpeedAnimation = true;
         invincibleStartTime=0;
-        shipPath1 = new Path();
-        shipPath2 = new Path();
         densityUnit=screenY/100;
         textAnimation1 = new Text(screenX, screenY, 1);
         textAnimation2 = new Text(screenX, screenY, 2);
@@ -703,22 +697,24 @@ public class DownhillGameView extends SurfaceView implements Runnable, SensorEve
     private void update(){
 
         //calculate when the ship has done a full screen length, and update the background state
-        distanceTravelled = distanceTravelled + (densityUnit*(speed/20)) / fps;
-        if(screenY-distanceTravelled<0){
-            distanceTravelled=0;
-            screenLengthsTravelled++;
-            if(screenLengthsTravelled>=backgroundStateOrder.length){
-                levelNo++;
-                setLevel();
-                screenLengthsTravelled=0;
-            }
-            //set the background state to be the int in the corresponding pos in the order of background states for this level
+        if(fps!=0) {
+            distanceTravelled = distanceTravelled + (densityUnit * (speed / 20)) / fps;
+            if (screenY - distanceTravelled < 0) {
+                distanceTravelled = 0;
+                screenLengthsTravelled++;
+                if (screenLengthsTravelled >= backgroundStateOrder.length) {
+                    levelNo++;
+                    setLevel();
+                    screenLengthsTravelled = 0;
+                }
+                //set the background state to be the int in the corresponding pos in the order of background states for this level
 
-            backgroundState = backgroundStateOrder[screenLengthsTravelled];
+                backgroundState = backgroundStateOrder[screenLengthsTravelled];
 
            /* Log.d("background","backgroundstate"+backgroundState);
             Log.d("screen","screenlengths"+screenLengthsTravelled);
             Log.d("level","levelNo"+levelNo);*/
+            }
         }
 
 
@@ -1244,17 +1240,21 @@ public class DownhillGameView extends SurfaceView implements Runnable, SensorEve
             //display instructions for touching to play game
             paint.setColor(Color.BLACK);
             if (beginGame == true && paused == true){
-                canvas.drawText("Level one", (screenX/3),(screenY/2), paint);
-                canvas.drawText("Press anywhere on the screen to start", (screenX/6),(screenY/2+50), paint);
-
+                ((DownhillGameActivity) getContext()).callGameText(levelNo,"Press anywhere on the screen to start");
+                turnedOffGameText=false;
+            } else if (levelNo==1 && beginGame ==false && !turnedOffGameText){
+                ((DownhillGameActivity) getContext()).turnOffGameText();
+                turnedOffGameText=true;
             }
 
             //draw next level instructions
             if (levelNo!=1) {
-                if (screenLengthsTravelled == 0) {
+                if (screenLengthsTravelled == 0 && turnedOffGameText) {
                     ((DownhillGameActivity) getContext()).callGameText(levelNo,levelDescription);
-                }else if (screenLengthsTravelled == 2){
+                    turnedOffGameText=false;
+                }else if (screenLengthsTravelled == 2 && !turnedOffGameText){
                     ((DownhillGameActivity) getContext()).turnOffGameText();
+                    turnedOffGameText=true;
                 }
             }
             //draw the text for bonus points for speed
@@ -1274,7 +1274,11 @@ public class DownhillGameView extends SurfaceView implements Runnable, SensorEve
             paint.setTextSize(screenY / 30);
 
             if (!beginGame&&paused&&ableToUnpause){
-                canvas.drawText("Paused, touch to resume",screenX/8,screenY/2,paint);
+                ((DownhillGameActivity) getContext()).callGameText(levelNo,"Paused, touch to continue");
+                pausedLastUpdate=true;
+            } else if (pausedLastUpdate && !beginGame){
+                ((DownhillGameActivity) getContext()).turnOffGameText();
+                pausedLastUpdate=false;
             }
 
             // Draw everything to the screen
@@ -1296,6 +1300,9 @@ public class DownhillGameView extends SurfaceView implements Runnable, SensorEve
         SharedPreferences.Editor gameEdit = prefs.edit();
         gameEdit.putInt("timesPlayedGame",timesPlayed);
         gameEdit.commit();
+        //if the next level text is displaying....
+        ((DownhillGameActivity) getContext()).turnOffGameText();
+        turnedOffGameText=true;
 
         paused = true;
         ableToUnpause=false;
@@ -1310,8 +1317,10 @@ public class DownhillGameView extends SurfaceView implements Runnable, SensorEve
         Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
         sharingIntent.setType("text/plain");
         sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "Look, I scored some points on a game. Wow.");
-        sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, "I just got "+ score + " points on Frosty, a super fun snowboarding game. " +
-                "Think you can do better? Download Frosty today at http://play.google.com/store/apps/details?id=com.newvoyage.game.frosty");
+        sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, "I just got "+ score + " points on Frosty, a snowboarding game for Android. " +
+                "Think you can do better? Download Frosty today at http://play.google.com/store/apps/details?id=com.newvoyage.game.frosty \n " +
+                "Don't care that one of your friends is sharing their game score with you on social media? I don't blame you, these messages are really annoying, " +
+                "hey I probably wouldn't bother clicking that link either. But please click it because I want more people to play my game -(dev)");
         context.startActivity(Intent.createChooser(sharingIntent, "Share via"));
     }
 
